@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CaravanMVC.DataAccess;
+using CaravanMVC.Models;
+
 
 namespace CaravanMVC.Controllers
 {
@@ -16,5 +18,12 @@ namespace CaravanMVC.Controllers
 			var wagons = _context.Wagons.ToList();
 			return View(wagons);
 		}
-	}
+        [Route("users/{id:int}")]
+        public IActionResult Show(int id)
+        {
+            var wagon = _context.Wagons.Find(id);
+               
+            return View(wagon);
+        }
+    }
 }
