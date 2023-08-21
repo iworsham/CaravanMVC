@@ -1,5 +1,25 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model Wagon
+
+
+<h1>The @Model.Name </h1>
+
+<p>Number of Wheels: @Model.NumWheels</p>
+
+@if (Model.Covered == true)
+{
+    <p>Wagon is Covered</p>
+   
 }
+else
+{
+    <p>Wagon is not Covered</p>
+}
+<h5>Passengers of @Model.Name</h5>
+@foreach(var passenger in Model.Passengers)
+{
+    <ul>
+        <li>@Model.Passengers</li>
+    </ul>
+}
+
+<p>Add more passengers => <a href="wagons/@Model.Id/passengers/new"></a>here</p>
