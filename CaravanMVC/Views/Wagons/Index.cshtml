@@ -4,5 +4,11 @@
 
 @foreach (var wagon in Model)
 {
-    <a href="/wagons/show">@wagon.Name</a>
+   <ol>
+       <li>
+            <a href="/wagons/@wagon.Id">@wagon.Name</a>
+
+        </li>
+        
+   </ol>
 }
